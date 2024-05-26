@@ -1,5 +1,4 @@
 from itertools import product
-from collections import defaultdict
 from typing import List, Dict, Optional, Tuple
 
 def make_play_list(order: int = 1) -> Dict[str, List[str]]:
@@ -7,9 +6,9 @@ def make_play_list(order: int = 1) -> Dict[str, List[str]]:
     plays = ["R", "P", "S"]
     return {''.join(combination): [] for combination in product(plays, repeat=order)}
 
-def remove_values_from_list(the_list: List[str], val: str) -> List[str]:
+def remove_values_from_list(the_list: List[str], value_to_remove: str) -> List[str]:
     """Custom `remove` function. Removes all occurrences of a value in a list."""
-    return [value for value in the_list if value != val]
+    return [value for value in the_list if value != value_to_remove]
 
 def reset_play_list(play_list, order):
     """Resets the play list and repopulates it with default values"""
